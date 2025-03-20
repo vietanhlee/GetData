@@ -21,3 +21,4 @@ Hoặc tải từng thư viện cần thiết sau:
     - Từ tiếp theo cũng như từ đầu cũng là đọc từ hiển thị trên màn để chuẩn bị đọc -> nhấn `S` và lập tức đọc từ đấy để chương trình ghi, đọc hết từ thì nhấn `D` ngay lập tức.
 
 # Cảm ơn các bạn
+- Các bạn có thể trợ giúp ghi thêm các từ nói tục vào file `bad_words.csv` 
