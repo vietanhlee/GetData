@@ -9,6 +9,9 @@ import numpy as np
 # Gọi tool lấy data points
 tool = TOOL()
 
+os.makedirs('DATA_KHONG_TUC', exist_ok= True)
+os.makedirs('DATA_TUC', exist_ok= True)
+
 # Hàm trộn từ (có lưu vào file csv mới)
 def process_combine_words():
     # Đầu ra là mảng 2D
@@ -52,11 +55,10 @@ while Is_collecting and current_index < len(data_words):
     word_origin = data_words[current_index]
     if(word_origin[-1] == '0'): DATA_DIR = r"DATA_KHONG_TUC"
 
-    word = word_origin[:-1]
-    index_word = [f"0{x+1}" for x in range(len(data_words))]
+    word = word_origin[:-1].strip()
 
-    file_name = os.path.join(DATA_DIR, f'{index_word[current_index]}.csv')
-    video_file = os.path.join(DATA_DIR, f'{index_word[current_index]}.avi')
+    file_name = os.path.join(DATA_DIR, f'{word}.csv')
+    video_file = os.path.join(DATA_DIR, f'{word}.avi')
 
     # Lấy thông số video
     frame_width = int(cap.get(3))
@@ -95,9 +97,9 @@ while Is_collecting and current_index < len(data_words):
                       font=font, fill=(120, 120, 0))  # Đỏ
             draw.text((50, 40), f"Nói: {word}",
                       font=font, fill=(255, 0, 0))  # Xanh lá
-            draw.text((50, 70), "Nhấn D sang từ tiếp theo",
+            draw.text((50, 70), "Nhấn d sang từ tiếp theo",
                       font=font, fill=(0, 0, 255))  # Xanh dương
-            draw.text((50, 100), f"Nhấn B để nói lại từ trước đó",
+            draw.text((50, 100), f"Nhấn b để nói lại từ trước đó",
                       font=font, fill=(0, 0, 225))  # Xanh lá
             
             # Chuyển lại từ PIL sang OpenCV
@@ -112,17 +114,17 @@ while Is_collecting and current_index < len(data_words):
 
             if key == ord('s'):
                 saving = True
-                print(f"Bắt đầu lưu dữ liệu cho từ: {word}")
+                print(f"Đang thu thập cho từ: {word}")
 
             elif key == ord('d'):
                 saving = False
                 current_index += 1
-                print(f"Hoàn tất lưu dữ liệu cho từ: {word}. Chuyển sang từ tiếp theo...")
+                print(f"Hoàn tất lưu dữ liệu cho từ: {word}. Chuyển sang từ tiếp theo...\n")
                 break
             elif key == ord("b"):
-                if current_index >0:
+                if current_index > 0:
                     current_index -= 1
-                print("Quay lại từ trước đó")
+                print("Đã lại từ trước đó")
                 break
             elif key == ord('q'):  # Nhấn 'q' để thoát toàn bộ chương trình
                 print("Dừng thu thập dữ liệu.")
