@@ -49,6 +49,7 @@ cap = cv2.VideoCapture(0)
 cv2.namedWindow('Mouth Points')
 
 while Is_collecting and current_index < len(data_words):
+    check_write = False
     # Thư mục lưu dữ liệu mặc định
     DATA_DIR = r"DATA_TUC"
 
@@ -77,8 +78,6 @@ while Is_collecting and current_index < len(data_words):
             ret, frame = cap.read()
             if not ret:
                 break
-            
-            frame_cp = frame.copy()
 
             frame = cv2.flip(frame, 1)
             tool.set_input_image(frame)  # Truyền ảnh vào công cụ TOOL
@@ -138,6 +137,10 @@ while Is_collecting and current_index < len(data_words):
                 if mouth_points:
                     writer.writerow(mouth_points)  # Lưu dữ liệu vào CSV
                     out.write(bounding_face)  # Ghi frame vào video (frame gốc từ webcam)
+                    check_write = True
+        
+        if check_write == False:
+            current_index -= 1
 
     out.release()  # Đóng file video
     
