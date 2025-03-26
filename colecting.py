@@ -69,7 +69,6 @@ while Is_collecting and current_index < len(data_words):
 
     with open(file_name, "w", newline="") as file:
         writer = csv.writer(file)
-        word = data_words[current_index]
         print(f"Đang chuẩn bị thu thập dữ liệu cho từ: {word}")
 
         while True:
@@ -92,14 +91,14 @@ while Is_collecting and current_index < len(data_words):
             draw = ImageDraw.Draw(pil_image)
 
            # Vẽ văn bản lên ảnh chính (frame)
-            draw.text((50, 10), "Nhấn S để bắt đầu thu thập dữ liệu",
-                      font=font, fill=(255, 0, 0))  # Đỏ
+            draw.text((50, 10), "Nhấn s mỗi khi nói ",
+                      font=font, fill=(120, 120, 0))  # Đỏ
             draw.text((50, 40), f"Nói: {word}",
-                      font=font, fill=(0, 255, 0))  # Xanh lá
-            draw.text((50, 70), "Nhấn D để chuyển sang từ tiếp theo",
+                      font=font, fill=(255, 0, 0))  # Xanh lá
+            draw.text((50, 70), "Nhấn D sang từ tiếp theo",
                       font=font, fill=(0, 0, 255))  # Xanh dương
-            draw.text((50, 100), f"Nhấn B để nếu muốn nói lại",
-                      font=font, fill=(0, 255, 0))  # Xanh lá
+            draw.text((50, 100), f"Nhấn B để nói lại từ trước đó",
+                      font=font, fill=(0, 0, 225))  # Xanh lá
             
             # Chuyển lại từ PIL sang OpenCV
             image_with_points = cv2.cvtColor(np.array(pil_image), cv2.COLOR_RGB2BGR)
