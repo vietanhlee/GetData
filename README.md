@@ -16,7 +16,7 @@ Hoặc tải từng thư viện cần thiết sau:
 - Chạy file `colecting.py` sau khi đã cài đủ thư viện yêu cầu
 
 - Nhìn vào phần hướng dẫn trên màn hình trước khi thu thập dữ liệu, nhìn từ để nói và chuẩn bị nói. Tiến hành lấy dữ liệu cụ thể như sau:
-    - Nhấn phím `s` mỗi khi lấy dữ liệu ,tức bắt đầu nói để ghi dữ liệu, sau khi nhấn thì nói ngay từ cần nói ngay lập tức, không quá nhanh và chậm, không dừng giữa chừng khi lấy dữ liệu mỗi từ. Từ ngắn có thể nói nhiều hơn 1 lần, từ dài thì thôi không cần thiết. 
+    - Nhấn phím `s` mỗi khi lấy dữ liệu ,tức bắt đầu nói để ghi dữ liệu, sau khi nhấn thì nói ngay từ cần nói ngay lập tức, không quá nhanh và chậm, không dừng giữa chừng khi lấy dữ liệu mỗi từ. Từ ngắn có thể nói nhiều hơn 1 lần (khoảng thời gian giữa các lần ngắt không quá lớn), từ dài thì thôi không cần thiết. 
      
     - Sau khi lấy dữ liệu xong nhấn phím `d` ngay lập tức để tiến hành đến từ tiếp theo. Nếu cần thu thập lại data trước đó thì nhấn `b`.
 
