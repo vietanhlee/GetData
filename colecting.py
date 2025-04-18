@@ -9,8 +9,8 @@ import numpy as np
 # Gọi tool lấy data points
 tool = TOOL()
 
-os.makedirs('DATA_KHONG_TUC', exist_ok= True)
-os.makedirs('DATA_TUC', exist_ok= True)
+os.makedirs('DATA/DATA_KHONG_TUC', exist_ok= True)
+os.makedirs('DATA/DATA_TUC', exist_ok= True)
 
 # Hàm trộn từ (có lưu vào file csv mới)
 def process_combine_words():
@@ -51,10 +51,10 @@ cv2.namedWindow('Mouth Points')
 while Is_collecting and current_index < len(data_words):
     check_write = False
     # Thư mục lưu dữ liệu mặc định
-    DATA_DIR = r"DATA_TUC"
+    DATA_DIR = r"DATA/DATA_TUC"
 
     word_origin = data_words[current_index]
-    if(word_origin[-1] == '0'): DATA_DIR = r"DATA_KHONG_TUC"
+    if(word_origin[-1] == '0'): DATA_DIR = r"DATA/DATA_KHONG_TUC"
 
     word = word_origin[:-1].strip()
 

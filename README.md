@@ -10,7 +10,7 @@
 ```
 
 Hoặc tải từng thư viện cần thiết sau:
-    `mediapipe==0.10.10` `opencv-python` `numpy` `pandas` `pillow`
+    `mediapipe==0.10.13` `opencv-python` `numpy` `pandas` `pillow`
 
 ## Cách chạy
 - Chạy file `colecting.py` sau khi đã cài đủ thư viện yêu cầu
